@@ -9,11 +9,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author afons
  */
+@Service
 public class VehicleFacede {
     
     private static final Map<Long, VehicleDTO> vehicles = new HashMap<>();

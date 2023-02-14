@@ -4,22 +4,30 @@
  */
 package com.mycompany.rentacar.facede;
 
+import com.mycompany.rentacar.DTO.ClientDTO;
 import com.mycompany.rentacar.DTO.ReceiptDTO;
+import com.mycompany.rentacar.DTO.VehicleDTO;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author afons
  */
+@Service
 public class ReceiptFacede {
     private static final Map<Long, ReceiptDTO> receipts = new HashMap<>();
     public ReceiptDTO create(ReceiptDTO receiptDTO)
     {
        Long nextId = receipts.keySet().size() + 1L;
        receiptDTO.setId(nextId);
+       Long client = receiptDTO.getClientDTO().getId();
+       Long vehicle = receiptDTO.getVehicleDTO().getId();
+      // receiptDTO.setClientDTO(client);
+      // receiptDTO.setVehicleDTO(vehicle);
        receipts.put(nextId, receiptDTO);
        return receiptDTO;
     }
