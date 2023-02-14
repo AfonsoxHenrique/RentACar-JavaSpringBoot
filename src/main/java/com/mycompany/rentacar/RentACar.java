@@ -17,6 +17,5 @@ public class RentACar {
 
     public static void main(String[] args) {
         SpringApplication.run(RentACar.class, args);
-        System.out.print("executando");
     }
 }
