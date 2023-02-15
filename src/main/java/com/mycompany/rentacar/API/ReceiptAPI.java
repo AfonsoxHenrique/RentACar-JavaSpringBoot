@@ -38,9 +38,9 @@ public class ReceiptAPI {
     
     @PutMapping("/receiptId")
     @ResponseBody
-    public ReceiptDTO update (@PathVariable("receiptId") Long vehicleId, @RequestBody ReceiptDTO receiptDTO)
+    public ReceiptDTO update (@PathVariable("receiptId") Long receiptId, @RequestBody ReceiptDTO receiptDTO)
     {
-        return receipt.update(vehicleId, receiptDTO);
+        return receipt.update(receiptId, receiptDTO);
     }
     
     @GetMapping

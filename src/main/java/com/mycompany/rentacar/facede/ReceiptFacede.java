@@ -24,10 +24,10 @@ public class ReceiptFacede {
     {
        Long nextId = receipts.keySet().size() + 1L;
        receiptDTO.setId(nextId);
-       Long client = receiptDTO.getClientDTO().getId();
-       Long vehicle = receiptDTO.getVehicleDTO().getId();
-      // receiptDTO.setClientDTO(client);
-      // receiptDTO.setVehicleDTO(vehicle);
+       ClientDTO client = new ClientDTO();
+       VehicleDTO vehicle = new VehicleDTO();
+       receiptDTO.setClientDTO(client);
+       receiptDTO.setVehicleDTO(vehicle);
        receipts.put(nextId, receiptDTO);
        return receiptDTO;
     }
